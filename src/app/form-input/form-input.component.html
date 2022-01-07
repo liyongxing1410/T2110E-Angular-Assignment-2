@@ -1,0 +1,97 @@
+<div class="container">
+  <form class="row" (ngSubmit)="onSubmit()" #f="ngForm">
+    <div class="col-md-6" ngModelGroup="userData">
+      <div class="form-group">
+        <label for="firstname">First name</label>
+        <input
+          type="text"
+          id="firstname"
+          class="form-control"
+          ngModel
+          name="firstname"
+          required
+          firstname
+          #firstname="ngModel"
+        />
+        <span *ngIf="!firstname.valid && firstname.touched" class="help-block">
+          Please enter your first name</span
+        >
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last name</label>
+        <input
+          type="text"
+          id="lastname"
+          class="form-control"
+          ngModel
+          name="lastname"
+          required
+          lastname
+          #lastname="ngModel"
+        />
+        <span *ngIf="!lastname.valid && lastname.touched" class="help-block">
+          Please enter your last name</span
+        >
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input
+          type="number"
+          id="phone"
+          class="form-control"
+          ngModel
+          name="phone"
+          required
+          number
+          #number="ngModel"
+        />
+        <span *ngIf="!number.valid && number.touched" class="help-block">
+          Please enter your phone number</span
+        >
+      </div>
+    </div>
+    <div class="col-md-6" ngModelGroup="userData">
+      <div class="form-group">
+        <label for="address">Street address</label>
+        <input
+          type="text"
+          id="address"
+          class="form-control"
+          ngModel
+          name="address"
+          required
+          address
+          #address="ngModel"
+        />
+        <span *ngIf="!address.valid && address.touched" class="help-block">
+          Please enter your address</span
+        >
+      </div>
+      <div class="form-group">
+        <label for="apt">Other information</label>
+        <input type="text" id="apt" class="form-control" ngModel name="apt" />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input
+          type="text"
+          id="city"
+          class="form-control"
+          ngModel
+          name="city"
+          required
+          city
+          #city="ngModel"
+        />
+        <span *ngIf="!city.valid && city.touched" class="help-block">
+          Please enter your city</span
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <button [disabled]="!f.valid" type="submit" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
